@@ -13,6 +13,6 @@ class FileWriter
         Console.WriteLine("Enter a new dish: ");
         var newDish = Console.ReadLine();
 
-        File.AppendAllText(path, newDish + "\n");
+        File.AppendAllText(path, newDish + "\n", Encoding.UTF8);
     }
 }
