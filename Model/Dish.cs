@@ -1,3 +1,5 @@
+namespace Menu.Model;
+
 class Dish
 {
     public Dish (string name, DateTime lastPreparation)
