@@ -39,12 +39,12 @@ class Program
 
         foreach (var item in resultDishes)
         {
-            Console.WriteLine(item.Type + item.Name + item.LastPreparation);
+            Console.WriteLine(item.Type + item.Name + item.LastPreparation.ToString("dd/MM/yyyy"));
         }
 
         RandomDishes myRandomDish = new RandomDishes();
-        string randomItem = myRandomDish.DishRandom(resultDishes);        
+        string randomItem = myRandomDish.PickRandom(resultDishes);        
 
-        Console.WriteLine($"Случайное блюдо: {randomItem}");
+        Console.WriteLine($"Случайное блюдо:{randomItem}");
     }   
 }
