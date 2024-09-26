@@ -2,6 +2,7 @@
 using System.Data.Common;
 using Menu.Model;
 using Menu.Storage;
+using Menu.Sorting;
 
 namespace Menu;
 
@@ -19,16 +20,30 @@ class Program
         Console.Write("Введите число от скольки дней блюдо подходит к фильтрации: ");
         var userDays = int.Parse(Console.ReadLine());
 
+        Console.Write("Введите тип блюда (1/2): ");
+        var userType = (SortBy)int.Parse(Console.ReadLine());
+
         //Создаем экземпляр класса DishFactory и записываем все обхекты в переменную dishes
         DishFactory dishFactory = new DishFactory();
-        var dishes = dishFactory.CreateDish(lines); 
+        var dishes = dishFactory.CreateDish(lines);
 
         //Создаем переменную по которой определяем от какого числа мы можем рекомендовать блюдо
         var maxDate = DateTime.Now.AddDays(-userDays);
-        List<Dish> filteredDishes = dishes.Where(d => d.LastPreparation < maxDate).ToList();
+        List<Dish> dateFilteredDishes = dishes.Where(d => d.LastPreparation < maxDate).ToList();
+
+        SortFactory sorter = new SortFactory();
+        var sorterType = sorter.CreateSorter(userType);
+
+        SortContext sortBy = new SortContext();
+        var resultDishes = sortBy.SortUsing(sorterType, dateFilteredDishes);
+
+        foreach (var item in resultDishes)
+        {
+            Console.WriteLine(item.Type + item.Name + item.LastPreparation);
+        }
 
         RandomDishes myRandomDish = new RandomDishes();
-        string randomItem = myRandomDish.DishRandom(filteredDishes);        
+        string randomItem = myRandomDish.DishRandom(resultDishes);        
 
         Console.WriteLine($"Случайное блюдо: {randomItem}");
     }   
