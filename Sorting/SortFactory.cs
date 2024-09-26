@@ -9,11 +9,11 @@ class SortFactory
     {
         switch(sortBy)
         {
-            case SortBy.firstDish:
-                return new FirstDishSorter();
-            case SortBy.secondDish:
-                return new SecondDishSorter();
-            case SortBy.desert:
+            case SortBy.FirstDish:
+                return new FirstDishFilter();
+            case SortBy.SecondDish:
+                return new SecondDishFilter();
+            case SortBy.Dessert:
                 return null;
             default:
                 throw new InvalidOperationException("There no such dishes!");
