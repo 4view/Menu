@@ -9,7 +9,7 @@ class DishFactory
         foreach (string line in lines)
         {
             string[] item = line.Split("-");
-            Dish dish = new Dish(item[0], DateTime.Parse(item[1]));
+            Dish dish = new Dish(int.Parse(item[0]), item[1], DateTime.Parse(item[2]));
             dishes.Add(dish);
         }
 
