@@ -6,6 +6,9 @@ using Microsoft.VisualBasic;
 
 namespace Menu.Storage;
 
+/// <summary>
+/// Class that write data in file
+/// </summary>
 class FileWriter
 {
     public void WriteDish(string path)

@@ -2,6 +2,10 @@ using System.Reflection.Metadata;
 
 namespace Menu.Model;
 
+/// <summary>
+/// Class that discribe dishes
+/// </summary>
+
 public class Dish
 {
     public Dish (int type, string name, DateTime lastPreparation)

@@ -1,5 +1,8 @@
 using Menu.Model;
 
+/// <summary>
+/// Class that create dishes and split by property
+/// </summary>
 class DishFactory
 {
     public List<Dish> CreateDish(List<string> lines)

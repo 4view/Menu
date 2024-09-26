@@ -2,7 +2,7 @@ namespace Menu.Sorting;
 
 public enum SortBy
 {
-    firstDish = 1,
-    secondDish = 2,
-    desert = 3
+    FirstDish = 1,
+    SecondDish = 2,
+    Dessert = 3
 }

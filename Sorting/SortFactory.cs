@@ -16,7 +16,7 @@ class SortFactory
             case SortBy.desert:
                 return null;
             default:
-                throw new InvalidOperationException("There no such sorter!");
+                throw new InvalidOperationException("There no such dishes!");
         }
     }
 }
