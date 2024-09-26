@@ -2,12 +2,12 @@ using System.Reflection.Metadata;
 
 namespace Menu.Model;
 
-class Dish
+public class Dish
 {
     public Dish (int type, string name, DateTime lastPreparation)
     {
         Type = type;
-        Name = name.Trim();
+        Name = name;
         LastPreparation = lastPreparation;
     }
 
