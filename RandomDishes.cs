@@ -1,10 +1,13 @@
 using Menu.Model;
 
+/// <summary>
+/// Class that select random dishes from filtered list
+/// </summary>
+
 class RandomDishes
 {
     public string DishRandom(List<Dish> dishes)
     {
-        //Создаем экземпляр класса Random
         Random rnd = new Random();
 
         int randomIndex = rnd.Next(dishes.Count);
